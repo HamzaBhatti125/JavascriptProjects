@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Slider</title>
+</head>
+<style>
+    table, th, td {
+
+    /* border: 1px solid;x */
+    /* border-collapse: collapse; */
+
+    padding: 10px;
+}
+table{
+    margin: 0 auto;
+}
+td{
+    /* float: left; */
+    clear: both;
+    margin: 0px !important; 
+    width: 150px;
+    text-align: center;
+    height: 50px;
+}
+.black{
+    background-color: #000;
+    color: #fff;
+}
+</style>
+<body >
+    <table >
+        <tbody id='table'>
+            <tr >
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>University</th>
+                <th>Year</th>
+                <th>City</th>
+            </tr>
+
+        </tbody>
+    </table>
+      
+</body>
+
+<script>
+    var name1 = ['Hamza','Wajahat','Bilal'];
+    var uni = ['NED','NED','NED'];
+    var year = ['Second','Second','Second'];
+    var city = ['Karachi','Karachi','Karachi'];
+    var currentField = null;
+    var temp = currentField;
+    var outField = null;
+    var create = document.getElementById('table')
+    var count = 1
+
+    for(var j=0; j< name1.length; j++){
+        create.innerHTML += `
+        <tr>
+            <td onmouseout="currentlyOut(${count})"  onmouseover="currentMouseOver(${count})">${j+1}</td>
+            <td onmouseout="currentlyOut(${count+1})"onmouseover="currentMouseOver(${count+1})">${name1[j]}</td>
+            <td onmouseout="currentlyOut(${count+2})"onmouseover="currentMouseOver(${count+2})">${uni[j]}</td>
+            <td onmouseout="currentlyOut(${count+3})"onmouseover="currentMouseOver(${count+3})">${year[j]}</td>
+            <td onmouseout="currentlyOut(${count+4})"onmouseover="currentMouseOver(${count+4})">${city[j]}</td>
+        </tr>
+        `
+        count += 5 
+    }
+
+var elem = document.getElementsByTagName('td');
+
+function defaultTable(){
+    for(var i=0;i<15;i++){
+
+        if(i % 2 != 0){
+            elem[i].style.backgroundColor='black';
+            elem[i].style.color='#fff';
+        }
+        else{
+            elem[i].style.backgroundColor='white';
+            elem[i].style.color='black';
+        }
+
+    }
+}
+defaultTable()
+
+function focusOnTD(){
+    console.log(currentField)
+    for(var i=0;i<15;i++){
+        if(currentField-1 == i){
+            elem[i].style.backgroundColor = "black"
+            elem[i].style.color = "white"
+
+        }
+        else{
+            elem[i].style.color = "black"
+
+            elem[i].style.backgroundColor = "white"
+        }
+    }
+}
+
+function currentlyOut(outFrom){
+
+    setTimeout(function(){
+        // console.log("outfrom",outFrom)
+        // console.log(currentField)
+        if(outFrom == currentField){
+            currentField = null;
+            temp = null;
+            defaultTable()
+        }
+        else{
+            focusOnTD()
+        }
+    },50)
+ 
+
+}
+function currentMouseOver(field){
+
+    // console.log(temp)
+    currentField = field
+    if (temp==null){
+        focusOnTD()
+    }
+    temp = currentField
+
+}
+
+
+</script>
+  
+</html>

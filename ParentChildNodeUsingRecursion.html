@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.green{
+    background: lightgreen;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+<body>
+<table id="table1"></table>
+<div id="div1">
+    <p id="p1">Pakistan Zindabad #1</p>
+    <p id="p2">Pakistan Zindabad #2</p>
+    <p id="p3">Pakistan Zindabad #3</p>
+    <p id="p4">Pakistan Zindabad #4</p>
+    <p id="p5">Pakistan Zindabad #5</p>
+    <p id="p6">Pakistan Zindabad #6</p>
+    <p id="p7">Pakistan Zindabad #7</p>
+    <p id="p8">Pakistan Zindabad #8</p>
+</div>
+
+
+        <!-- <div id="cal">
+            <p>Southern Cal is sunny.</p>
+            <p>Northern Cal is rainy.</p>
+            <p>Eastern Cal is desert.</p>
+        </div>
+        <div id="ny">
+            <p>Urban NY is crowded.</p>
+            <p>Rural NY is sparse.</p>
+        </div> -->
+
+</body>
+<script>
+    // var element = document.getElementById('div1').childNodes
+    // var elementLength = element.length
+    // // for(var i=0;i<elementLength;i++){
+    //     if(element[i].nodeType=='3'){
+    //         continue
+    //     }
+    //     else{
+    //         element[i].className = 'green'
+    //         // console.log(element[i].nodeType)
+    //     }
+    // }
+    // var i=0;
+    // while(i <= elementLength){
+    //     element[i].className = 'green';
+    //     i++;
+    // }
+
+    // var parent1 = document.getElementById('p1').parentNode
+    // var children1 = parent1.childNodes
+    // for(var i=0;i<children1.length;i++){
+    //     children1[i].className= 'green';
+    // }
+
+var parent1 = document.getElementById('div1')
+var element = document.getElementById('div1').childNodes
+var value = element.length -1 ;
+function recursion(value){
+    if(element[value] == parent1.firstChild){
+        return 0
+    }else{
+        element[value].className = 'green'
+        return recursion(value - 1);
+    }
+    
+}
+
+recursion(value)
+
+// console.log(parent1.childNodes[1])
+
+// function recurse(str){
+//     if (str.length<=1){
+//         return str
+//     }else{
+//         return recurse(str.substr(1)) +str[0] 
+//     }
+// }    
+// recurse('hamza');
+// console.log(recurse('hamza'))
+
+</script>
+</html>
