@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Slider</title>
+</head>
+<style>
+div#slides {
+    max-width: 100%;
+}
+.images {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.images img{
+    width: 100%;
+    height: 500px ;
+}
+.next {
+    position: absolute;
+    right: 6%;
+    top: 320px;
+    width: 60px;
+    padding: 10px;
+    border: 1px solid;
+    background: #000;
+    border-radius: 45px;
+}
+.prev {
+    position: absolute;
+    left: 6%;
+    top: 320px;
+    width: 60px;
+    padding: 10px;
+    border: 1px solid;
+    background: #000;
+    border-radius: 45px;
+}
+
+.hidden {
+    display: none;
+}
+.fas {
+    font-weight: 900;
+    font-size: 55px;
+    color: #fff;
+}
+.fas1{
+    padding-right: 8px;
+}
+.fas2{
+    padding-left: 8px;
+}
+h1.heading {
+    text-align: center;
+    font-family: cursive;
+}
+.prev i:active , .next i:active{
+    color: gray;
+}
+
+</style>
+<body>
+    
+    <div id="slides">
+        <h1 class="heading" >Image Switcher</h1>
+        <div class="images"><img src="images/22.jpg" id="change" alt="img1"></div>
+        <a href="#" id="prev1" class="prev" onclick="prev()"><i class="fas fas1 fa-backward"></i></a>
+        <a href="#" id="next1" class="next" onclick="next()"><i class="fas fas2 fa-forward"></i></a>
+
+    </div>
+</body>
+<script>
+    var cout = 2
+    var arr = ['images/11.jpg','images/22.jpg','images/44.jpg','images/77.jpg','images/55.jpg']
+
+
+    function prev(){ 
+        cout = cout - 1
+        if(cout < 0 ){
+            document.getElementById('prev1').className += ' hidden'
+        }
+        else{
+            if(cout == 0){
+                console.log("alag se if")
+                document.getElementById('prev1').className += ' hidden'
+
+            }
+            console.log("in prev else")
+            document.getElementById('change').src=arr[cout]
+            document.getElementById('next1').classList.remove("hidden");
+        }
+
+    }
+    function next(){
+        cout = cout + 1
+        if (arr.length <= cout){
+            document.getElementById('next1').className += ' hidden'
+        }
+        else{
+            if(cout == 4){
+                document.getElementById('next1').className += ' hidden'
+
+            }
+            console.log("in next else")
+            document.getElementById('prev1').classList.remove("hidden");
+            document.getElementById('change').src=arr[cout]
+        }
+    }
+</script>
+</html>
