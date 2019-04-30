@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+// var stack = {
+//     array:[],
+//     push(a){
+//         x = stack.array.push(a);
+//         console.log(stack.array)
+//         return x
+//     },
+//     pop(){
+//         x = stack.array.pop();
+//         console.log(stack.array)
+//         return x
+//     }
+// }
+
+
+function Stack(){
+    this.array = [],
+    this.push = function push(a){
+        x =  this.array.push(a);
+        console.log(this.array)
+        return x
+    },
+    this.pop = function pop(){
+        x = this.array.pop();
+        console.log(this.array)
+        return x
+    }
+}
+
+function Que(){
+    this.array=[],
+    this.enq= function enq(a){
+        x = this.array.unshift(a);
+        console.log(this.array);
+        return x
+    },
+    this.dq = function dq(){
+        x = this.array.shift();
+        console.log(this.array)
+        return x
+    }
+}
+
+
+
+// var que ={
+//     array:[],
+//     enq(a){
+//         que.array.unshift(a);
+//         console.log(que.array)
+//     },
+//     dq(){
+//         que.array.shift();
+//         console.log(que.array)
+//     }
+// }
+
+
+</script>
+</html>

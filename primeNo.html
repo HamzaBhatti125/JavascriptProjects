@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+</head>
+<style>
+
+</style>
+<body>
+
+    
+    
+</body>
+<script>
+   var prime = parseInt(prompt("Enter any number: "));
+   var flag = false;
+   var checkNo = parseInt(prime/2);
+   console.log(prime)
+//    for(var i = 2;i<=checkNo;i++){
+    var i =2
+      while(i<=checkNo){  
+        if(prime % i ==0){
+            console.log("composite Number")
+            flag = true;
+            break;
+        }else{
+            i++;
+        }
+   }
+   if(flag == false){   
+       console.log("prime Number")
+
+   }
+
+</script>
+</html>
