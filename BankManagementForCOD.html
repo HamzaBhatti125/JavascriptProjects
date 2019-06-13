@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+</head>
+<body>
+
+    <p>Hello World</p>
+
+</body>
+<script>
+    let account = [100,101,102,103]
+    let amount = [1000,2000,3000,4000]
+    starter()
+    function starter(){
+        let num = account.length
+        let input = prompt(`enter what operation you would like to perform?
+        1. Create Account
+        2. Perform Transaction` );
+        
+        if( input == 1){
+            account.push(account[0] + num)
+            console.log('your account has been created.Your account Number is '+ account[num]);
+            console.log(account)
+            let openAmount = parseInt(prompt('Please deposit some amount in your account'))
+            amount.push(openAmount);
+            console.log('Thankyou for opening account.Your newly balance is '+ amount[num]);
+            console.log(amount)
+        }else if( input ==2 ){
+            let input2 = prompt(`select any of the following:
+            1. Deposit Amount
+            2. Withdraw Amount
+            3. Check Balance
+            4. Third Party Transfer`)
+            if ( input2 == 1){
+                let accountNo = prompt('please enter account number: ')
+                let amountEntered = parseInt(prompt('please enter amount: '))
+                for(var j=0; j < account.length;j++){
+                    if(account[j]== accountNo){
+                        let amt = amount[j];
+                        amount[j] = amt + amountEntered;
+                        console.log('Amount has been added. Your total balance is: ',amount[j]);
+                    }
+                }
+            }
+            else if( input2 == 2 ){
+                let accountNo = prompt('please enter account number: ')
+                let amountEntered = parseInt(prompt('please enter amount: '))
+                for(var j=0; j < account.length;j++){
+                    if(account[j]== accountNo){
+                        let amt = amount[j];
+                        if( amountEntered > amt ){
+                            console.log('Sorry you do not have sufficient Balance.')
+                        }else{
+                            amount[j] = amt - amountEntered;
+                            console.log('Thankyou for Withdrawal. Your total balance is: ',amount[j]);
+                        }
+                        
+                    }
+                }
+            }
+            else if( input2 == 3){
+                let accountNo = prompt('please enter account number: ');
+                for(var j=0 ; j<account.length ; j++){
+                    if(account[j] == accountNo){
+                        console.log('Your current Balance is: '+ amount[j]);
+                    }
+                    
+                }
+            }
+            else if( input2 == 4 ){
+                let accountNo = prompt('please enter account number: ');
+                let amountEntered = parseInt(prompt('please enter amount: '))
+                let accountNo2 = prompt('please enter other account number: ');
+                for(var j=0; j< account.length ; j++){
+                    if( account[j] == accountNo){
+                        if(amountEntered => amount[j]){
+                            let amt1 = amount[j];
+                            amount[j] = amt1 - amountEntered 
+                            console.log(amount[j])
+
+                        }else{
+                            console.log('you dont have sufficient balance')
+                        }
+                        
+                    }
+                    if( account[j] == accountNo2){
+                        let hamza1 = amount[j];
+                        amount[j] = amountEntered + hamza1;
+                        console.log(amount[j])
+                    }
+                }
+            }
+        }
+    }
+    
+    for(var i=0;;i++){
+        let cont = prompt(`press y to continue: `)
+        if(cont == 'y'){
+            starter()
+    }else{
+        console.log('Thankyou for coming')
+        break;
+    }
+
+    }
+    
+
+
+
+
+
+
+
+</script>
+</html>
