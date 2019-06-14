@@ -16,19 +16,12 @@
     let amount = [1000,2000,3000,4000]
     starter()
     function starter(){
-        let num = account.length
         let input = prompt(`enter what operation you would like to perform?
         1. Create Account
         2. Perform Transaction` );
         
         if( input == 1){
-            account.push(account[0] + num)
-            console.log('your account has been created.Your account Number is '+ account[num]);
-            console.log(account)
-            let openAmount = parseInt(prompt('Please deposit some amount in your account'))
-            amount.push(openAmount);
-            console.log('Thankyou for opening account.Your newly balance is '+ amount[num]);
-            console.log(amount)
+            CeateAccount()
         }else if( input ==2 ){
             let input2 = prompt(`select any of the following:
             1. Deposit Amount
@@ -36,7 +29,33 @@
             3. Check Balance
             4. Third Party Transfer`)
             if ( input2 == 1){
-                let accountNo = prompt('please enter account number: ')
+                DepositAmount()
+            }
+            else if( input2 == 2 ){
+                WithdrawAmount()
+            }
+            else if( input2 == 3){
+                CheckBalance()
+            }
+            else if( input2 == 4 ){
+                ThirdpartyTransfer()
+            }
+        }
+    }
+    
+    function CeateAccount(){
+        let num = account.length
+        account.push(account[0] + num)
+            console.log('your account has been created.Your account Number is '+ account[num]);
+            console.log(account)
+            let openAmount = parseInt(prompt('Please deposit some amount in your account'))
+            amount.push(openAmount);
+            console.log('Thankyou for opening account.Your newly balance is '+ amount[num]);
+            console.log(amount)
+    }
+
+    function DepositAmount(){
+        let accountNo = prompt('please enter account number: ')
                 let amountEntered = parseInt(prompt('please enter amount: '))
                 for(var j=0; j < account.length;j++){
                     if(account[j]== accountNo){
@@ -45,9 +64,10 @@
                         console.log('Amount has been added. Your total balance is: ',amount[j]);
                     }
                 }
-            }
-            else if( input2 == 2 ){
-                let accountNo = prompt('please enter account number: ')
+    }
+    
+    function WithdrawAmount(){
+        let accountNo = prompt('please enter account number: ')
                 let amountEntered = parseInt(prompt('please enter amount: '))
                 for(var j=0; j < account.length;j++){
                     if(account[j]== accountNo){
@@ -61,18 +81,21 @@
                         
                     }
                 }
-            }
-            else if( input2 == 3){
-                let accountNo = prompt('please enter account number: ');
+    }
+
+    function CheckBalance(){
+        let accountNo = prompt('please enter account number: ');
                 for(var j=0 ; j<account.length ; j++){
                     if(account[j] == accountNo){
                         console.log('Your current Balance is: '+ amount[j]);
                     }
                     
                 }
-            }
-            else if( input2 == 4 ){
-                let accountNo = prompt('please enter account number: ');
+    }
+
+
+    function ThirdpartyTransfer(){
+        let accountNo = prompt('please enter account number: ');
                 let amountEntered = parseInt(prompt('please enter amount: '))
                 let accountNo2 = prompt('please enter other account number: ');
                 for(var j=0; j< account.length ; j++){
@@ -87,14 +110,13 @@
                         }
                         
                     }
-                    if( account[j] == accountNo2){
+                     if( account[j] == accountNo2){
                         let hamza1 = amount[j];
                         amount[j] = amountEntered + hamza1;
                         console.log(amount[j])
                     }
                 }
-            }
-        }
+        
     }
     
     for(var i=0;;i++){
@@ -107,9 +129,6 @@
     }
 
     }
-    
-
-
 
 
 
