@@ -335,5 +335,176 @@
 // `)
 
 
+//---------------------------------------------
+// <============ Chapter 35 to 40 ============>
+//---------------------------------------------
 
+//1.
+// function date(){
+//     var current = new Date();
+//     console.log(current)
+// }
+// date()
 
+//2.
+// function name(first,last){
+//     let full = first + last
+//     alert("Hello " + full)
+// }
+// name('hamza', 'hameed')
+
+//3.
+// function add(num1,num2){
+//     return num1 + num2
+// }
+// console.log(add(2,1))
+
+//4.
+// function calc(num1,num2,op){
+//     if (op === '+'){
+//         console.log(num1 + num2)
+//     }
+//     else if(op === '-'){
+//         console.log(num1 - num2)
+//     }else if(op === '*'){
+//         console.log(num1 * num2)
+//     }else if (op === '/'){
+//         console.log(num1 / num2)
+//     }
+// }
+// calc(24,4,'+')
+// calc(24,4,'-')
+// calc(24,4,'*')
+// calc(24,4,'/')
+
+//5.
+// function sqr(num){
+//     console.log(num*num)
+// }
+// sqr(5)
+// sqr(8)
+
+//6.
+// function fact(num){
+//     let result = 1
+//     if(typeof(num) == 'string' || num < 0 ){
+//         console.log("Invalid Input")
+//     }else if (num == 0){
+//         console.log("Factorial of 0 is 1")
+//     }else{
+//         for(var i=1; i<= num; i++){
+//             result = result * i;
+//         }
+//         console.log("Factorial of " + num + " is " + result)
+//     }
+// }
+// fact('i')
+// fact(-2)
+// fact(0)
+// fact(5)
+
+//7.
+// function counter(num1,num2){
+//     for(var i=num1; i<= num2; i++){
+//         document.write(i + "<br>")
+//     }
+// }
+// counter(2,20)
+
+//8.
+// function calculateHyp(base, perp){
+//     let hyp , sqr1,sqr2
+//     function calculatesqr(base, perp){
+//         sqr1 = base* base;
+//         sqr2 = perp * perp;
+//     }
+//     calculatesqr(base,perp)
+//     hyp = sqr1 + sqr2
+//     console.log("The hypotenous of right triangle is " + hyp)
+// }
+// calculateHyp(5,4)
+// calculateHyp(5,10)
+
+//9.
+// function area(num1,num2){
+//     return num1 * num2
+// }
+// console.log(area(5,4))
+// var a = 5;
+// var b = 4;
+// console.log(area(a,b))
+
+//10
+// function palindrome(str){
+//     let low =  str.toLowerCase()
+//     let str1 = low.split('')
+//     str1 = str1.reverse()
+//     str1 = str1.join('')
+//     if(low == str1){
+//         console.log('Word is palindrome')
+//     }else{
+//         console.log("Word is not palindrome")
+//     }
+// }
+// palindrome('maham')
+// palindrome('Civic')
+// palindrome('hamza')
+
+//11.
+function capital(str){
+    let word = str.toLowerCase();
+    word = word.split(' ');
+    for(var i=0; i<word.length ;i++){
+        let a = word[i];
+        let b = word[i];
+        a = a.charAt(0).toUpperCase()
+        b = b.slice(1)
+        word[i] = a.concat(b)
+    }
+    word = word.join(' ')
+    document.write("Example String: " + str + "<br> Capitalised form: "+ word)
+}
+capital("the quick brown fox jumps over lazy dog")
+
+//12.
+// function longest(str){
+//     let word = str.split(' ')
+//     let long = 0;
+//     let index = 0;
+//     for(var i=0;i<word.length;i++){
+//         let leng = word[i].length;
+//         if(long < leng){
+//             long = leng
+//             index = i;
+//         }
+//     }
+//     console.log("The largest word is: " + word[index])
+// }
+// longest("Web Development tutorial")
+// longest("hello world hamza hameedbhatti")
+
+//13.
+// function letterCounter(str,letter){
+//     let count = 0;
+//     str = str.toLowerCase()
+//     for(var i =0; i<str.length; i++){
+//         if(letter == str[i]){
+//             count++;
+//         }
+//     }
+//     console.log("The number of occurences of letter "+ letter + " in a string is: " + count)
+// }
+// letterCounter('JSResourceS.com', 's')
+// letterCounter('Hamza Bhatti', 'o')
+
+//14.
+// function calcCircumference(radius){
+//     let result = 2*Math.PI*radius
+//     console.log("The circumference is: " + result)
+// }
+// function calcArea(radius){
+//     let result = Math.PI * (radius*radius)
+//     console.log("The area is: "+ result)
+// }
+// calcCircumference(5)
+// calcArea(5)
