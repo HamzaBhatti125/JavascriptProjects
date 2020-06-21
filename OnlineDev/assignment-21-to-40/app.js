@@ -451,20 +451,20 @@
 // palindrome('hamza')
 
 //11.
-function capital(str){
-    let word = str.toLowerCase();
-    word = word.split(' ');
-    for(var i=0; i<word.length ;i++){
-        let a = word[i];
-        let b = word[i];
-        a = a.charAt(0).toUpperCase()
-        b = b.slice(1)
-        word[i] = a.concat(b)
-    }
-    word = word.join(' ')
-    document.write("Example String: " + str + "<br> Capitalised form: "+ word)
-}
-capital("the quick brown fox jumps over lazy dog")
+// function capital(str){
+//     let word = str.toLowerCase();
+//     word = word.split(' ');
+//     for(var i=0; i<word.length ;i++){
+//         let a = word[i];
+//         let b = word[i];
+//         a = a.charAt(0).toUpperCase()
+//         b = b.slice(1)
+//         word[i] = a.concat(b)
+//     }
+//     word = word.join(' ')
+//     document.write("Example String: " + str + "<br> Capitalised form: "+ word)
+// }
+// capital("the quick brown fox jumps over lazy dog")
 
 //12.
 // function longest(str){
