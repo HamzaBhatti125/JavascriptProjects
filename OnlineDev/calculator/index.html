@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+      <h1 class="header-css">Scientific Calculator by <span>Muhammad Hamza</span></h1>
+       <table class="calculator" cellspacing="0" cellpadding="1">
+        <tr>
+          <td colspan="5"><input id="display" name="display" value=" " size="28" maxlength="25"></td>
+        </tr>
+        <tr>
+          <td><button class="btnTop" name="btnTop" onclick="clearResult()">C</button></td>
+          <td><button class="btnTop" name="btnTop"  onclick="deleteChar()">Del</button></td>
+          <td><button class="btnTop" name="btnTop" value="=" onclick="getResult()">=</button></td>
+          <td><button class="btnOpps" name="btnOpps"  onclick="getNumber('3.141592653589793')">&#960;</button></td>
+          <td><button class="btnMath" name="btnMath" value="%" onclick="getNumber('%')">%</button></td> 
+        </tr>
+        <tr>
+          <td><button class="btnNum" name="btnNum" value="7" onclick="getNumber('7')">7</button> </td>
+          <td><button class="btnNum" name="btnNum" value="8" onclick="getNumber('8')">8</button></td>
+          <td><button class="btnNum" name="btnNum" value="9" onclick="getNumber('9')">9</button></td>
+          <td><button class="btnOpps" name="btnOpps" value="x&#94;" onclick="exp()">x&#94;</button></td>
+          <td><button class="btnMath" name="btnMath" value="/" onclick="getNumber('/')">/</button></td>
+        <tr>
+          <td><button class="btnNum" name="btnNum" value="4" onclick="getNumber('4')">4</button></td>
+          <td><button class="btnNum" name="btnNum" value="5" onclick="getNumber('5')">5</button></td>
+          <td><button class="btnNum" name="btnNum" value="6" onclick="getNumber('6')">6</button></td>
+          <td><button class="btnOpps" name="btnOpps" value="ln" onclick="ln()">ln</button></td>
+          <td><button class="btnMath" name="btnMath" value="*" onclick="getNumber('*')">*</button></td>
+        </tr>
+        <tr>
+          <td><button class="btnNum" name="btnNum" value="1" onclick="getNumber('1')">1</button></td>
+          <td><button class="btnNum" name="btnNum" value="2" onclick="getNumber('2')">2</button></td>
+          <td><button class="btnNum" name="btnNum" value="3" onclick="getNumber('3')">3</button></td>
+          <td><button class="btnOpps" name="btnOpps" value="&radic;" onclick="sqrt()">&radic;</button></td>
+          <td><button class="btnMath" name="btnMath" value="-" onclick="getNumber('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button class="btnMath" name="btnMath" value="&#177" onclick="changeSign()">&#177</button></td>
+          <td><button class="btnNum" name="btnNum" value="0" onclick="getNumber('0')">0</button></td>
+          <td><button class="btnMath" name="btnMath" value="&#46;" onclick="getNumber('.')">.</button></td>
+          <td><button class="btnOpps" name="btnOpps" value="x&#50;" onclick="square()">x<sup>2</sup></button></td>
+          <td><button class="btnMath" name="btnMath" value="+" onclick="getNumber('+')">+</button></td>
+        </tr>
+        <tr>
+          <td><button class="btnMath" name="btnMath" onclick="addChar('(')">(</button></td>
+          <td><button class="btnMath" name="btnMath" onclick="addChar(')')">)</button></td>
+          <td><button class="btnMath" name="btnMath" onclick="cos()">Cos</button></td>
+          <td><button class="btnMath" name="btnMath" onclick="sin()">Sin</button></td>
+          <td><button class="btnMath" name="btnMath" onclick="tan()">Tan</button></td>
+       </tr>
+      </table>
+                 
+</body>
+<script src="app.js"></script>
+</html>
