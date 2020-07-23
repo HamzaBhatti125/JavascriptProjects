@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+  }
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column (if you want) */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear floats after rows */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+.mobile-store img{
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;;
+}
+.counter-wrapper{
+    text-align: center;
+}
+.display{
+        display: none;
+    }
+    .counter {
+    border: 1px solid red;
+    text-align: center;
+    padding: 50px;
+    }
+    .mainScreen {
+    border: 1px solid red;
+    width: 90px;
+    height: 100px;
+    margin: 10px auto;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 3;
+}
+@media screen and (max-width: 900px) {
+    .column {
+      width: 50%;
+    }
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+</style>
+<body>
+<!-- Chapter 43-48 -->
+
+<!-- Task1
+<a href="#" onclick="alert('This Linked Is Clicked')">Click Me!</a> -->
+
+<!-- TASK2 -->
+<div class="mobile-store">
+    <h3>Mobile Phone LookUp</h3>
+    <img src="images/mobile.jpg" onclick="alert('Thank You for purchasing phone XYZ from us!')"/>
+    <img src="images/mobile.jpg" onclick="alert('Thank You for purchasing phone ABC from us!')"/>
+    <img src="images/mobile.jpg" onclick="alert('Thank You for purchasing phone EFG from us!')"/>
+    <img src="images/mobile.jpg" onclick="alert('Thank You for purchasing phone MNO from us!')"/>
+</div>
+
+<!-- Task #3 -->
+<div id="main">
+    <table id="table" border="1px">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Class</th>
+        </tr>
+        <tr id="1">
+            <td>1</td>
+            <td>Kashaf</td>
+            <td>10</td>
+            <td><button id="1" onclick="deleteRow(this.id)">delete</button></td>
+        </tr>
+        <tr id="2">
+            <td>2</td>
+            <td>Hamza</td>
+            <td>8</td>
+            <td><button id="2" onclick="deleteRow(this.id)">delete</button></td>
+        </tr>
+        <tr id="3">
+            <td>3</td>
+            <td>Bilal</td>
+            <td>7</td>
+            <td><button id="3" onclick="deleteRow(this.id)">delete</button></td>
+        </tr>
+
+    </table>
+</div>
+
+ <!-- TASK4 -->
+ <img src="images/car1.jpg" width="800" height="500" onMouseover="src='images/car2.jpg'" onMouseout="src='images/car1.jpg'">
+
+<!-- Task#5 -->
+<div class="counter">
+    <div class="mainScreen" id="count">0</div>
+    <button class="increase" onclick="increase()">Increase</button>
+    <button class="decrease" onclick="decrease()">Decrease</button>
+</div>
+
+<!-- Chapter 49-52 EVENTS -->
+
+<!-- TASK1 -->  
+<form onSubmit="checkAddress('username','emailID');">
+    Username:
+    <input type="text" id="username">
+    <br>
+    Email:
+    <input type="text" id="emailID">
+    <input type="submit" value="Submit">
+</form>
+
+<!-- TASK2 -->
+<p id="slowLoris">
+    Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus.
+    <a href="javascript:void(0);" onClick="showMore();"><em>Click for more.</em></a>
+</p>
+
+<!-- Task3 -->
+
+<!-- Chapter 58-67 DOM -->
+    <!-- TASK1 -->
+    <!-- <div>
+        <h1> DOM </h1>
+        <div id="form-content" class="content">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" />
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" />
+        <label for="email">Email</label>
+        <input type="text" id="email" />
+        </div>
+        <div id="main-content" class="content">
+        <p class="render"> First Name : Alex</p>
+        <p class="render" id="lastName">Last Name: Bank</p>
+        <p class="render"> Email : alexbank@example.com</p>
+        <p class="render"> Country : Pakistan </p>
+        <p class="render"> contact : +92 300 1234567</p>
+        </div>
+    </div> -->
+
+    <!-- TASK2 -->
+    <!-- <div> <h1> DOM </h1> <div id="form-content" class="content"> <label for="first-name">First Name</label> <input type="text" id="first-name"/> <label for="last-name">Last Name</label> <input type="text" id="last-name"/> <label for="email">Email</label> <input type="text" id="email"/> </div><div id="main-content" class="content"><p class="render"> First Name : Alex</p><p class="render" id="lastName">Last Name: Bank</p><p class="render"> Email : alexbank@example.com</p><p class="render"> Country : Pakistan </p><p class="render"> contact : +92 300 1234567</p></div></div> -->
+   
+    
+<script src="./app.js"></script>
+</body>
+</html>
